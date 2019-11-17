@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_ui_bundle/inputWidget.dart';
 
 class Login extends StatelessWidget {
   @override
@@ -18,44 +17,15 @@ class Login extends StatelessWidget {
               children: <Widget>[
                 Padding(
                   padding: EdgeInsets.only(left: 40, bottom: 10),
-                  child: Text(
-                    "Email",
-                    style: TextStyle(fontSize: 16, color: Color(0xFF999A9A)),
-                  ),
                 ),
                 Stack(
                   alignment: Alignment.bottomRight,
                   children: <Widget>[
-                    InputWidget(30.0, 0.0),
+
                     Padding(
                         padding: EdgeInsets.only(right: 50),
                         child: Row(
                           children: <Widget>[
-                            Expanded(
-                                child: Padding(
-                              padding: EdgeInsets.only(top: 40),
-                              child: Text(
-                                'Enter your email id to continue...',
-                                textAlign: TextAlign.end,
-                                style: TextStyle(color: Color(0xFFA0A0A0),
-                                fontSize: 12),
-                              ),
-                            )),
-                            Container(
-                              padding: EdgeInsets.all(10),
-                              decoration: ShapeDecoration(
-                                shape: CircleBorder(),
-                                gradient: LinearGradient(
-                                    colors: signInGradients,
-                                    begin: Alignment.topLeft,
-                                    end: Alignment.bottomRight),
-                              ),
-                              child: ImageIcon(
-                                AssetImage("assets/ic_forward.png"),
-                                size: 40,
-                                color: Colors.white,
-                              ),
-                            ),
                           ],
                         ))
                   ],
@@ -65,8 +35,11 @@ class Login extends StatelessWidget {
             Padding(
               padding: EdgeInsets.only(bottom: 50),
             ),
-            roundedRectButton("Let's get Started", signInGradients, false),
-            roundedRectButton("Create an Account", signUpGradients, false),
+            roundedRectButton("New Student", signInGradients, false),
+            Padding(
+              padding: EdgeInsets.only(bottom: 30),
+            ),
+            roundedRectButton("Old Student", signUpGradients, false),
           ],
         )
       ],
@@ -100,16 +73,7 @@ Widget roundedRectButton(
                     fontWeight: FontWeight.w500)),
             padding: EdgeInsets.only(top: 16, bottom: 16),
           ),
-          Visibility(
-            visible: isEndIconVisible,
-            child: Padding(
-                padding: EdgeInsets.only(right: 10),
-                child: ImageIcon(
-                  AssetImage("assets/ic_forward.png"),
-                  size: 30,
-                  color: Colors.white,
-                )),
-          ),
+
         ],
       ),
     );
@@ -122,6 +86,6 @@ const List<Color> signInGradients = [
 ];
 
 const List<Color> signUpGradients = [
-  Color(0xFFFF9945),
-  Color(0xFFFc6076),
+  Color(0xFFFF80AB),
+  Color(0xFFFF4081),
 ];
